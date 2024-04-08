@@ -9,7 +9,6 @@
 # Output the area and circumference of the circle. Round the output to one decimal value.
 
 # Sample Input:
-
 # 3
 
 # Sample Output:
