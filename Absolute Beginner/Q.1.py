@@ -24,4 +24,4 @@
   input_str = input("")
   characters = list(input_str)
   output_str = ','.join(characters)
-  print(output_str)
+  print(output_str) 
