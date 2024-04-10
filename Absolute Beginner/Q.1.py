@@ -1,27 +1,28 @@
-# You are tasked with writing a program to calculate and print the area and circumference of a circle given its radius r units. Implement a class named 'Circle' without any parameter in its constructor.
+# You are provided with a number check whether its odd or even. 
 
-# Input:
+# Print "Odd" or "Even" for the corresponding cases.
 
-# The input consists of a single line containing an integer r representing the radius of the circle.
+# Note: In case of a decimal, Round off to nearest integer and then find the output. Incase the input is zero, print "Zero".
 
-# Output:
+# Input Description:
+# A number is provided as the input.
 
-# Output the area and circumference of the circle. Round the output to one decimal value.
+# Output Description:
+# Find out whether the number is odd or even. Print "Odd" or "Even" for the corresponding cases. Note: In case of a decimal, Round off to nearest integer and then find the output. In case the input is zero, print "Zero".
 
-# Sample Input:
+# Sample Input :
+# 2
+# Sample Output :
+#Even
 
-# 3
-
-# Sample Output:
-
-# 28.3
-# 18.8
-# ==============================================================================================
+#==============================================================================================
 # -----------
 # Source code:
 # -----------
 
-  input_str = input("")
-  characters = list(input_str)
-  output_str = ','.join(characters)
-  print(output_str) 
+u=int(input(''))
+if u%2==0:
+    print("Even")
+else:
+    print("Odd")
+print("The Input Provided is: " + userInput)
