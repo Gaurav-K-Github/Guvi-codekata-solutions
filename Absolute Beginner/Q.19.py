@@ -1,25 +1,28 @@
-# Write a code to get an integer N and print the even values from 1 till N in a separate line.
+# You are given with Principle amount($), Interest Rate(%) and Time (years) in that order. Find Simple Interest.
+
+# Print the output up to two decimal places (Round-off if necessary).
+
+# (S.I. = P*T*R/100)
 
 # Input Description:
-# A single line contains an integer N.
+# Three values are given to you as the input. these values correspond to Principle amount, Interest Rate and Time in that particular order.
 
 # Output Description:
-# Print the even values from 1 to N in a separate line.
+# Find the Simple interest and print it up to two decimal places. Round off if required.
 
 # Sample Input :
-# 6
+# 1000 2 5
 # Sample Output :
-# 2
-# 4
-# 6
+# 100.00
 
 #==============================================================================================
 # -----------
 # Source code:
 # -----------
 
-N = int(input(""))
+principle, rate, time = map(float, input("").split())
 
-for i in range(2, N + 1, 2):
-    print(i)
+simple_interest = (principle * rate * time) / 100
+
+print("{:.2f}".format(simple_interest))
 
