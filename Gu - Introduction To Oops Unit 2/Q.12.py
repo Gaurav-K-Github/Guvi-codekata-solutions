@@ -18,7 +18,6 @@
 
 # The input class cls is a valid Python class.
 # The class hierarchy can have multiple levels of inheritance but does not contain any circular inheritance.
-    
 #==============================================================================================
 
 # -----------
