@@ -11,7 +11,7 @@
 # Mani is certain there are at least 0 people in front of him and at most( n-1) people behind him.
 # Sample input:
 
-# 5 2 3
+# 5 2 
 
 # Sample output:
 
