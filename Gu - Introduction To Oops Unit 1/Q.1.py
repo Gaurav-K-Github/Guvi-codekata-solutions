@@ -7,7 +7,6 @@
 
 # Print a single integer, the number of possible positions Mani could occupy in the queue.
 # Constraints:
-
 # The queue contains between 1 and 100 people.
 # Mani is certain there are at least 0 people in front of him and at most( n-1) people behind him.
 # Sample input:
