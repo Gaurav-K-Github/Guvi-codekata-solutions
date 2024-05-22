@@ -4,7 +4,6 @@
 
 # The input consists of a single line containing three integers:( n),( a), and( b) (( 0≤a,b<n≤100)). These represent the total number of people in the queue, the minimum number of people in front of Mani, and the maximum number of people behind Mani, respectively.
 # Output:
-
 # Print a single integer, the number of possible positions Mani could occupy in the queue.
 # Constraints:
 # The queue contains between 1 and 100 people.
