@@ -28,30 +28,34 @@
 # Source code:
 # -----------
 
-def calculate_profit(N):
-  total_profit = 0
-  length = len(N)
+class NumberChecker:
+    def __init__(self, n):
+        self.n = n
+        self.sum = 0
+        self.temp = n
 
-  for i in range(length):
-      digit = int(N[i])
-      multiplier = 1
+    def check_factorial_sum(self):
+        while self.n:
+            #..... YOUR CODE STARTS HERE .....
 
-      for j in range(i, -1, -1):
-          multiplier *= (j + 1)
+            digit = self.n % 10
+            fact = 1
+            for i in range(1, digit + 1):
+                fact *= i
+            self.sum += fact
+            self.n //= 10
+    
+            #..... YOUR CODE ENDS HERE .....            
 
-      profit = digit * multiplier
-      total_profit += profit
+        if self.sum == self.temp:
+            return "Right"
+        else:
+            return "Wrong"
 
-  return total_profit
 
-# Read the prediction string N
-N = input().strip()
+if __name__ == "__main__":
+    n = int(input())
+    number_checker = NumberChecker(n)
+    result = number_checker.check_factorial_sum()
+    print(result)
 
-# Calculate the total profit
-total_profit = calculate_profit(N)
-
-# Check if the prediction is right
-if total_profit == int(N):
-  print("Right")
-else:
-  print("Wrong")
