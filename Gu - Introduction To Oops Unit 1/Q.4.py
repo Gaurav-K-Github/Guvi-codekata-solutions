@@ -26,32 +26,41 @@
 # Source code:
 # -----------
 
-def max_books(n, t, times):
-  # Sort the times in ascending order
-  times.sort()
+import sys
+from collections import deque, defaultdict
 
-  # Initialize variables
-  books_read = 0
-  time_spent = 0
+I = sys.stdin.readline
 
-  # Iterate through the sorted times to find the maximum number of books Vishakan can read
-  for time in times:
-      if time_spent + time <= t:
-          # If Vishakan can read the book within the available time, add it to the books_read
-          books_read += 1
-          time_spent += time
-      else:
-          # If Vishakan cannot read the book within the available time, break the loop
-          break
+def ii():
+    return int(I().strip())
 
-  return books_read
+def li():
+    return list(map(int, I().strip().split()))
 
-# Read the number of books and available time
-n, t = map(int, input().split())
+def mi():
+    return map(int, I().strip().split())
 
-# Read the times required to read each book
-times = list(map(int, input().split()))
+def main():
+    n, k = mi()
+    arr = li()
+    
+    #..... YOUR CODE STARTS HERE .....
+    
+    arr.sort()
 
-# Calculate and print the maximum number of books Vishakan can read
-result = max_books(n, t, times)
-print(result)
+    max_books = 0
+    total_time = 0  
+
+    for time in arr:
+        if total_time + time <= k:
+            max_books += 1
+            total_time += time
+        else:
+            break 
+
+    print(max_books)
+    
+    #..... YOUR CODE ENDS HERE .....
+
+if __name__ == '__main__':
+    main()
