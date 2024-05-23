@@ -34,37 +34,55 @@
 # Source code:
 # -----------
 
-def highest_average_student(records):
-  highest_average = 0
-  highest_student = ""
+class Student:
+    def __init__(self, name, scores):
+        self._name = name  # protected attribute
+        self.__scores = scores  # private attribute
 
-  for record in records:
-      # Extract student's name and marks
-      name, math, physics, biology = record
+    def calculate_average(self):
+        return sum(self.__scores) / len(self.__scores)
 
-      # Calculate average score
-      average_score = (math + physics + biology) / 3
+    def get_name(self):  # public method to access protected attribute
+        return self._name
 
-      # Update highest average and student's name if the current student has a higher average
-      if average_score > highest_average:
-          highest_average = average_score
-          highest_student = name
 
-  return highest_student
+class TopStudentFinder:
+    def __init__(self):
+        self.max_avg = -1.0
+        self.top_student = ""
 
-# Taking input for the number of students
-n = int(input())
+    def find_top_student(self, students):
+        #..... YOUR CODE STARTS HERE .....
 
-# List to store student records
-records = []
+        for student in students:
+            avg_score = student.calculate_average()
+            if avg_score > self.max_avg:
+                self.max_avg = avg_score
+                self.top_student = student.get_name()
 
-# Taking input for student records
-for _ in range(n):
-  record = input().split()
-  name = record[0]
-  math, physics, biology = map(int, record[1:])
-  records.append((name, math, physics, biology))
 
-# Calling the function to find the student with the highest average score
-result = highest_average_student(records)
-print(result)
+
+        #..... YOUR CODE ENDS HERE .....
+    def get_top_student(self):
+        return self.top_student
+
+
+if __name__ == "__main__":
+    n = int(input())
+    students_data = []
+
+    for _ in range(n):
+        student_info = input().split()
+        name = student_info[0]
+        scores = list(map(int, student_info[1:]))
+        students_data.append(Student(name, scores))
+
+    #..... YOUR CODE STARTS HERE .....
+
+top_student_finder = TopStudentFinder()
+top_student_finder.find_top_student(students_data)
+top_student = top_student_finder.get_top_student()
+print(top_student)
+
+    #..... YOUR CODE ENDS HERE .....
+
