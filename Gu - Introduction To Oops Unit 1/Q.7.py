@@ -28,20 +28,12 @@
 # Source code:
 # -----------
 
-def binary_to_hex(binary_str):
-  # Convert binary string to integer
-  decimal_num = int(binary_str, 2)
+a = input()
 
-  # Convert decimal number to hexadecimal string
-  hex_str = hex(decimal_num)[2:]
+#..... YOUR CODE STARTS HERE .....
 
-  return hex_str
+base_16 = hex(int(a, 2))[2:]
 
-# Read the binary string
-binary_str = input().strip()
+print(base_16)
 
-# Convert binary string to hexadecimal string
-hex_str = binary_to_hex(binary_str)
-
-# Print the hexadecimal string
-print(hex_str)
+#..... YOUR CODE ENDS HERE .....
