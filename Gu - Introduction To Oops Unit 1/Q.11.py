@@ -1,97 +1,70 @@
-# Design a Python program that uses single level inheritance to model a school. The school has two types of people: students and teachers. Both students and teachers have a name and an age. However, a student also has a department, while a teacher has a subject they teach.
+# A group of friends is planning a road trip to visit multiple destinations. Each friend owns a car, and they need to ensure that the total fuel consumption of their vehicles matches the distance they plan to travel. The distance to each destination is represented by a list of integers, where positive values indicate the distance in kilometers they need to travel, and negative values indicate the distance they need to backtrack.
 
-# Create classes to represent both a student and a teacher, and use inheritance to avoid code duplication. Write a method in each class to print the details of the student or teacher.
+# The friends can adjust the fuel levels of their cars by adding or subtracting fuel, with each adjustment costing one coin. They want to minimize the total cost of adjusting their fuel levels to match the total distance they plan to travel.
 
-# Sample Input:
+# What is the minimum cost the group will have to pay to ensure that the total fuel consumption of their vehicles equals the total distance they plan to travel?
 
-# Ravi Kumar, 20, Computer Science
-# Dr. Srinivasan, 45, Data Structures and Algorithms
+# Input:
 
-# Sample Output:
+# The first line contains a single integer n (1 ≤ n ≤ 10^5) — the number of destinations the group plans to visit.
+# The second line contains n integers a1, a2, ..., an (-10^9 ≤ ai ≤ 10^9) — representing the distances to each destination. Positive values indicate the distance they need to travel, and negative values indicate the distance they need to backtrack.
+# Output:
 
-# Student: Ravi Kumar, Age: 20, Department: Computer Science
-# Teacher: Dr. Srinivasan, Age: 45, Subject: Data Structures and Algorithms
+# Output a single number — the minimal number of coins you need to pay to make the product equal to 1.
 
-# Explanation:
+# Sample input:
 
-# In the sample output, each line represents the details of a person in the school:
+# 4
+# 0 0 0 0
 
-# The first line is the details of a student. It's Ravi Kumar who is 20 years old and studying Computer Science.
-# The second line is the details of a teacher. It's Dr. Srinivasan who is 45 years old and teaches Data Structures and Algorithms.
-# These details are printed by calling the print_details() method of each person object. The method is defined in each class and prints the details specific to that person.
+# Sample output:
 
-# This is an example of single level inheritance, where the Student and Teacher classes inherit from a common base class (Person). The base class defines properties and methods common to all people (like name and age), while the derived classes add properties and methods specific to students and teachers (like grade and subject).
-
-# Constraints:
-
-# The name of the student or teacher is a string and can contain any printable ASCII characters.
-# The age of the student or teacher is an integer and can be any positive integer.
-# The department of the student is a string and can contain any printable ASCII characters.
-# The subject of the teacher is a string and can contain any printable ASCII characters.
-
+# 4
+    
 #==============================================================================================
 
 # -----------
 # Source code:
 # -----------
+class NumberProcessor:
+    def __init__(self, l):
+        self.l = l
+        self.s = 0
+        self.odd = 0
+        self.nz = 0
 
-
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def print_details(self):
-        pass
-
-
-class Student(Person):
-    def __init__(self, name, age, department):
-        #..... YOUR CODE STARTS HERE .....
-        super().__init__(name, age)
-        self.department = department
-
-
-        #..... YOUR CODE ENDS HERE .....
-
-    def print_details(self):
+    def process_numbers(self):
         #..... YOUR CODE STARTS HERE .....
 
-        print(f"Student: {self.name}, Age: {self.age}, Department: {self.department}")
+        for i in range(len(self.l)):
+            if int(self.l[i]) < 0:
+                self.odd += 1
+                self.s += abs(-1 - int(self.l[i]))
+            elif int(self.l[i]) > 0:
+                self.s += (int(self.l[i]) - 1)
+            else:
+                self.nz += 1
 
-        #..... YOUR CODE ENDS HERE .....
+        if self.odd % 2 != 0:
+            if '0' in self.l:
+                return self.s + 1 * self.nz
+            else:
+                return self.s + 2
+        else:
+            if '0' in self.l:
+                return self.s + 1 * self.nz
+            else:
+                return self.s
 
 
-class Teacher(Person):
-    def __init__(self, name, age, subject):
-        #..... YOUR CODE STARTS HERE .....
-        super().__init__(name, age)
-        self.subject = subject
 
-
-        #..... YOUR CODE ENDS HERE .....
-
-    def print_details(self):
-        #..... YOUR CODE STARTS HERE .....
-
-        print(f"Teacher: {self.name}, Age: {self.age}, Subject: {self.subject}")
-
-        #..... YOUR CODE ENDS HERE .....
-
-
-def main():
-    # Sample Input
-    student_info = input().split(", ")
-    teacher_info = input().split(", ")
-
-    # Create objects
-    student = Student(*student_info)
-    teacher = Teacher(*teacher_info)
-
-    # Print details
-    student.print_details()
-    teacher.print_details()
+       #..... YOUR CODE ENDS HERE .....        
 
 
 if __name__ == "__main__":
-    main()
+    n = int(input())
+    l = str(input()).split(" ")
+
+    number_processor = NumberProcessor(l)
+    result = number_processor.process_numbers()
+    print(result)
