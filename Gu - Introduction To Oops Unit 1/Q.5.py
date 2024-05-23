@@ -26,19 +26,33 @@
 # Source code:
 # -----------
 
-def has_love_triangle(n, preferences):
-  for i in range(n):
-      # Check if there exists a love triangle starting from plane i
-      if preferences[preferences[preferences[i] - 1] - 1] == i + 1:
-          return "YES"
-  return "NO"
+class CycleChecker:
+    def __init__(self, f):
+        self.f = f
+        self.n = len(f)
 
-# Read the number of planes
-n = int(input())
+    def check_cycle(self):
+        #..... YOUR CODE STARTS HERE .....
 
-# Read the preferences of each plane
-preferences = list(map(int, input().split()))
+        for i in range(self.n):
+            a = i + 1
+            b = self.f[a - 1]
+            c = self.f[b - 1]
+        
+            if self.f[c - 1] == a:
+                return "YES"
+    
+        return "NO"
 
-# Check for the existence of a love triangle and print the result
-result = has_love_triangle(n, preferences)
-print(result)
+        #..... YOUR CODE ENDS HERE .....        
+ 
+if __name__ == "__main__":
+    n = int(input())
+    f = list(map(int, input().split()))
+
+    #..... YOUR CODE STARTS HERE .....
+    cycle_checker = CycleChecker(f)
+    print(cycle_checker.check_cycle())
+
+
+    #..... YOUR CODE ENDS HERE .....
