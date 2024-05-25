@@ -4,6 +4,7 @@
 # print_cols(): Print the number of columns of the matrix.
 # print_elements(): Print the elements of the matrix in the form of a 2D array.
 # If the input is invalid, print 'invalid'.
+
 # Input:
 
 # The input consists of a single line in the format rowsxcols total_elements, where rows and cols are integers representing the number of rows and columns of the matrix respectively, and total_elements is the total number of elements in the matrix. This is followed by the elements of the matrix, each element separated by a space.
