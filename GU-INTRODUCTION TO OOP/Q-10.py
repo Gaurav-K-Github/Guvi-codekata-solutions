@@ -10,7 +10,6 @@
 # ICICI: Add 1 to the ASCII value of each character and insert the number '1' after every character.
 # HDFC: Add 1 to the ASCII value of characters at even indices and subtract 1 from the ASCII value of characters at odd indices. Spaces are not encrypted.
 # The reverse of both techniques will decrypt the message (i.e., original text).
-
 # Input:
 
 # Bank Type and the message.
