@@ -8,7 +8,6 @@
 # A number is provided as the input.
 
 # Output Description:
-
 # Find out whether the number is odd or even. Print "Odd" or "Even" for the corresponding cases. Note: In case of a decimal, Round off to nearest integer and then find the output. In case the input is zero, print "Zero".
 
 # Sample Input :
