@@ -1,7 +1,6 @@
 # Mani finds himself in a queue of( n) people but is uncertain about his exact position. However, he's confident that there are at least( a) people in front of him and at most( b) people behind him. Mani seeks to determine the number of different positions he could occupy in the queue.
 
 # Input:
-
 # The input consists of a single line containing three integers:( n),( a), and( b) (( 0≤a,b<n≤100)). These represent the total number of people in the queue, the minimum number of people in front of Mani, and the maximum number of people behind Mani, respectively.
 # Output:
 # Print a single integer, the number of possible positions Mani could occupy in the queue.
