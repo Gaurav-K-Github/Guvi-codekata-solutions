@@ -1,6 +1,5 @@
 //Problem Statement
 // Write a program that takes four integers as input, performs a series of arithmetic operations using these integers, and outputs the results in a specific format.
-
 // Description
 // You need to declare four integer variables, perform the following operations, and print the results:
 
