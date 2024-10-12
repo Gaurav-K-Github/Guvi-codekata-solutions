@@ -1,3 +1,49 @@
+//Question:16
+
+// Smart Appliance Management System
+// Problem Statement:
+// Design a smart appliance management system that allows users to manage a collection of appliances in a smart home. Each appliance has a unique ID, a name, a power rating, and a status (on/off). You need to implement a class called Appliance to represent an appliance, and a class called SmartHome to manage the collection of appliances. The SmartHome class should provide methods to add an appliance, remove an appliance by ID, toggle the status of an appliance by ID, and calculate the total power consumption of all appliances that are currently on.
+
+// Description:
+// Create an Appliance class with the following attributes: int applianceID, String name, double powerRating, and boolean status.
+
+// Implement a parameterized constructor in the Appliance class to initialize all attributes.
+// Implement methods to toggle the status of the appliance and retrieve the power rating.
+// The SmartHome class should maintain a list of Appliance objects.
+// Implement the following methods in the SmartHome class:
+
+// void addAppliance(Appliance appliance): Adds a new appliance to the system.
+// boolean removeAppliance(int applianceID): Removes an appliance from the system by its ID. Returns true if the appliance was successfully removed, false otherwise.
+// boolean toggleApplianceStatus(int applianceID): Toggles the status of an appliance by its ID. Returns true if the status was successfully toggled, false otherwise.
+// double calculateTotalPower(): Calculates the total power consumption of all appliances that are currently on.
+// Input Format:
+// The first line contains an integer n, the number of appliances to be added to the system.
+// The next n lines each contain the details of an appliance in the following order: applianceID, name, powerRating, and status (either "on" or "off").
+// The next line contains an integer m, the number of operations to be performed.
+// The next m lines each contain a string representing an operation: either "add", "remove", "toggle", or "calculate", followed by the relevant parameters (appliance details for "add", applianceID for "remove" and "toggle").
+// Output Format:
+// For each "remove" operation, output "Appliance removed successfully" if the appliance was removed, otherwise output "Appliance not found".
+// For each "toggle" operation, output "Appliance status toggled" if the status was toggled, otherwise output "Appliance not found".
+// For the "calculate" operation, output the total power consumption of all appliances that are currently on.
+
+// Sample Input:
+// 2
+// 501 Air_Conditioner 1.5 on
+// 502 Refrigerator 0.8 off
+// 3
+// toggle 502
+// calculate
+// remove 501
+// Sample Output:
+// Appliance status toggled
+// Total Power Consumption: 2.3 kW
+// Appliance removed successfully
+
+//==============================================================================================
+//-----------
+//Source code:
+//----------
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
