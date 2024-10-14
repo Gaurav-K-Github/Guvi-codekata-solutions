@@ -1,7 +1,6 @@
 //Question:30
 
 //Creating a Frequency Map
-
 // Problem Statement:
 // Read a list of words and create a frequency map of each word.
 
